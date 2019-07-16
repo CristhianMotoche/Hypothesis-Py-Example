@@ -1,0 +1,14 @@
+{
+  "name": "presentation",
+  "version": "1.0.0",
+  "description": "Presentation for Hypothesis",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "backslide": "^2.3.4"
+  }
+}

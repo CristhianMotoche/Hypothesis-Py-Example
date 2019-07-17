@@ -1,4 +1,3 @@
-title: Property testing
 class: testing
 layout: true
 
@@ -7,12 +6,13 @@ layout: true
 ]
 
 ---
+
+title: Pruebas de propiedad
 class: impact
 
 <!-- INTRO -->
 
 # {{title}}
-## With a good subtitle :-)
 
 ---
 
@@ -45,8 +45,7 @@ title: Motivación
 
 ## {{title}}
 
---
-¿Cuántas pruebas unitarias son necesarias para probar algo?
+¿Cuántas pruebas unitarias son necesarias para probar una **unidad de software**?
 
 --
 
@@ -147,4 +146,102 @@ Y los tests van a pasar.
 
 ---
 
-See the [wiki](https://github.com/gnab/remark/wiki) to learn more of what you can do with .alt[Remark.js]
+title: Introducción
+
+# Ok, entonces, ¿qué hacemos?
+
+Escribamos **propiedades** que tenga que cumplir nuestro _Subject Under Test_
+para varios casos aleatórios.
+
+--
+
+1) `suma(x,y) == suma(y,x)`
+- Ok, que tal si retorno `x*y` siempre?
+- La prueba pasaría, con el comportamiento incorrecto. :|
+
+--
+
+2) `suma(suma(x, 1), 1) == suma(x, 2)`
+- Ok, que tal si retorno `0` siempre?
+- La prueba pasaría, con el comportamiento incorrecto. :|
+
+---
+
+title: Introducción
+
+3) `suma(x,0) == x`
+- Ok, que tal si…
+- Bueno, se pone cada vez más difícil implementar algo _incorrecto_.
+
+--
+
+Y así, podremos cubrir diferentes casos que nos harán desarrollar la implementación deseada:
+
+```python
+def suma(x, y):
+    return x + y
+```
+
+---
+
+title: Demo
+class: center middle
+
+# DEMO!
+
+Vamos a utilizar `Hypothesis`.
+
+---
+
+title: Conclusiones
+class: middle
+
+# Conclusiones
+
+--
+
+1) Las pruebas de propiedad nos ayudan a probar casos que las pruebas llevadas
+con ejemplos no siempre cubren.
+
+--
+
+2) Las pruebas de propiedad nos ayudan a probar **propiedades** que debería cumplir
+nuestro código.
+
+--
+
+3) Algunos ejemplos de propiedades son:
+- Allá y pa'ca de nuevo: `decode (encode something) == something`
+- Muchas rutas, un mismo destino: `f (g x) == g (f x)`
+- Entre más cambia, más queda igual: `f (f (f (f x))) == x`
+
+---
+
+title: Preguntas
+class: center middle
+
+# ¿Preguntas?
+
+---
+
+title: Contacto
+class: center middle
+
+# Contacto
+
+Cristhian Motoche
+
+Emails:
+
+- `cmotoche@stackbuilders.com`
+- `cristhian.motoche@gmail.com`
+
+GitHub: `CristhianMotoche`
+
+Repo: [https://git.io/fj1Yh](https://git.io/fj1Yh)
+
+---
+
+class: center middle
+
+# ¡Gracias!

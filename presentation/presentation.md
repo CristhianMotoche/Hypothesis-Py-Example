@@ -162,7 +162,7 @@ para varios casos aleatórios.
 --
 
 2) `suma(suma(x, 1), 1) == suma(x, 2)`
-- Ok, que tal si retorno `0` siempre?
+- Ok, ¿que tal si retorno `0`?
 - La prueba pasaría, con el comportamiento incorrecto. :|
 
 ---

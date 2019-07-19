@@ -1,3 +1,4 @@
 setup.sh
 node_modules
 .hypothesis
+__pycache__
